@@ -1,0 +1,32 @@
+<div>
+    <!-- Botón para agregar nueva productossubproductossubcategoriass -->
+    <!-- <button mat-raised-button color="primary" (click)="agregarCategoria()">Agregar productossubcategorias</button> -->
+  </div>
+  
+  <!-- Tabla para mostrar las productossubcategoriass -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID PRODUCTO</th>
+        <th>ID SUBCATEGORIA</th>
+       <!-- Columna para las acciones CRUD -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterar sobre todaslascategorias y mostrar cada productossubcategorias -->
+      <tr *ngFor="let productossubcategorias of todaslasproductossubcategoriass">
+        <td>{{ productossubcategorias.id_producto }}</td>
+        <td>{{ productossubcategorias.id_subcategoria }}</td>
+        <td>
+          <!-- Botones para editar y eliminar productossubproductossubcategoriass -->
+          <button mat-icon-button color="primary" (click)="editarProductossubcategorias(productossubcategorias)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminarProductossubcategorias(productossubcategorias)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

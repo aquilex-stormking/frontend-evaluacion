@@ -1,0 +1,39 @@
+<div>
+    <!-- Botón para agregar nueva categoría -->
+    <!-- <button mat-raised-button color="primary" (click)="agregarusuario()">Agregar Categoría</button> -->
+  </div>
+  
+  <!-- Tabla para mostrar las categorías -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre Usuario</th>
+        <th>Password</th>
+        <th>Rol</th>
+        <th>Estado</th>
+        <th>Acciones</th> <!-- Columna para las acciones CRUD -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterar sobre todaslasusuarios y mostrar cada categoría -->
+      <tr *ngFor="let usuario of todaslasusuarios">
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.nombre_usuario }}</td>
+        <td>{{ usuario.contrasena }}</td>
+        <td>{{ usuario.rol }}</td>
+        <td>{{ usuario.estado }}</td>
+
+        <td>
+          <!-- Botones para editar y eliminar categoría -->
+          <button mat-icon-button color="primary" (click)="editarusuario(usuario)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminarusuario(usuario)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

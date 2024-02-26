@@ -1,0 +1,34 @@
+<div>
+    <!-- Botón para agregar nueva producto -->
+    <!-- <button mat-raised-button color="primary" (click)="agregarCategoria()">Agregar producto</button> -->
+  </div>
+  
+  <!-- Tabla para mostrar las productos -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre Producto</th>
+        
+        <th>Acciones</th> <!-- Columna para las acciones CRUD -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterar sobre todaslasproductos y mostrar cada producto -->
+      <tr *ngFor="let producto of todaslasproductos">
+        <td>{{ producto.id }}</td>
+        <td>{{ producto.nombre_producto }}</td>
+        
+        <td>
+          <!-- Botones para editar y eliminar producto -->
+          <button mat-icon-button color="primary" (click)="editarProducto(productos)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminarProducto(productos)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

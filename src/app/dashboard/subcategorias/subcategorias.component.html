@@ -1,0 +1,37 @@
+
+    <!-- Botón para agregar nueva subcategoría -->
+    <button mat-raised-button color="primary" (click)="agregarSubcategoria()">
+      <mat-icon>add</mat-icon>
+    </button>
+
+
+  
+  <!-- Tabla para mostrar las subcategorías -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre Subcategoría</th>
+        <th>Categoria</th>
+        <th>Estado</th> <!-- Columna para las acciones CRUD -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterar sobre todaslascategorias y mostrar cada subcategoría -->
+      <tr *ngFor="let subcategoria of todaslassubcategorias">
+        <td>{{ subcategoria.id }}</td>
+        <td>{{ subcategoria.nombre_subcategoria }}</td>
+        <td>{{ subcategoria.estado }}</td>
+        <td>
+          <!-- Botones para editar y eliminar subcategoría -->
+          <button mat-icon-button color="primary" (click)="editarSubCategoria(subcategoria)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminarSubCategoria(subcategoria)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

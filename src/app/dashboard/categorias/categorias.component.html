@@ -1,0 +1,34 @@
+<div>
+    <!-- Botón para agregar nueva categoría -->
+    <!-- <button mat-raised-button color="primary" (click)="agregarCategoria()">Agregar Categoría</button> -->
+  </div>
+  
+  <!-- Tabla para mostrar las categorías -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre Categoría</th>
+        <th>Estado</th>
+        <th>Acciones</th> <!-- Columna para las acciones CRUD -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterar sobre todaslascategorias y mostrar cada categoría -->
+      <tr *ngFor="let categoria of todaslascategorias">
+        <td>{{ categoria.id }}</td>
+        <td>{{ categoria.nombre_categoria }}</td>
+        <td>{{ categoria.estado }}</td>
+        <td>
+          <!-- Botones para editar y eliminar categoría -->
+          <button mat-icon-button color="primary" (click)="editarCategoria(categoria)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminarCategoria(categoria)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
